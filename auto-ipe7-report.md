@@ -1,3 +1,4 @@
+> **Projeto:** Auto IPE7 | **Versão:** 1.1 | **Data:** 10/04/2026 | **Responsável:** Cleilton Silva | **Status:** Finalizado
 # Relatório de Testes e Auditoria de Qualidade - Auto IPE7
 
 ## 1. Visão Geral do Projeto
@@ -37,18 +38,24 @@ O projeto apresenta altos índices de otimização, com os seguintes resultados 
 ## 5. Gestão de Defeitos (Bug Report)
 
 ### ✅ Defeitos Resolvidos
-* **ID #001:** Falha de sobreposição no menu mobile em ecrãs estreitos (Z-index).
-    * **Correção:** Ajuste de posicionamento CSS para garantir visibilidade total dos itens.
+| ID | Título / Descrição | Severidade | Prioridade | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| #001 | Sobreposição do menu mobile em ecrãs estreitos (Z-index). | **Alta** | **P1** | ✅ Corrigido |
 
-### ⚠️ Defeitos em Backlog (Identificados via Lighthouse)
-Como parte da análise crítica de QA, foram isolados os seguintes pontos que impediram a nota máxima de acessibilidade:
+**Passos para Reprodução (Bug #001):**
+1. Aceder ao site via dispositivo mobile (ou simulação < 375px).
+2. Acionar o menu hambúrguer.
+3. **Resultado Obtido:** Itens do menu surgiam por baixo de elementos do cabeçalho.
+4. **Resultado Esperado:** Menu deve sobrepor todos os elementos da interface.
 
-1. **Baixo Contraste no Footer:** O elemento `p.footer-copy.mt-3` apresenta ratio de contraste insuficiente.
-    * **Impacto:** Dificulta a leitura para utilizadores com baixa visão.
-2. **Hierarquia de Títulos:** Uso de tag `<h5>` para "Mecânica Geral" fora da ordem sequencial.
-    * **Impacto:** Prejudica a navegação por tecnologias assistivas (leitores de ecrã).
-3. **Landmark Principal:** Ausência da tag `<main>`.
-    * **Impacto:** Má prática de semântica HTML que dificulta a identificação do conteúdo principal.
+---
+
+### ⚠️ Defeitos em Backlog (Aguardando Manutenção)
+| ID | Descrição | Elemento Afetado | Impacto | Severidade | Prioridade |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| #002 | Baixo contraste no texto. | `p.footer-copy.mt-3` | Dificulta leitura para utilizadores com baixa visão. | Média | P2 |
+| #003 | Hierarquia de títulos incorreta. | `<h5>` "Mecânica Geral" | Prejudica navegação por leitores de ecrã e SEO. | Média | P2 |
+| #004 | Ausência de Landmark Principal. | Tag `<main>` ausente | Falha na semântica; dificulta identificação do conteúdo. | Baixa | P3 |
 
 ---
 
